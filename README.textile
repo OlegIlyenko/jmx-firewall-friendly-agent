@@ -1,0 +1,21 @@
+Idea taken from:
+
+    http://blogs.sun.com/jmxetc/entry/connecting_through_firewall_using_jmx
+
+to use agent execute:
+
+<pre><code>
+    java -Dorg.am.rmi.port=<DESIRED_PORT> -javaagent:<PATH_TO_AGENT_JAR> ... (other stuff)
+</code></pre>	
+
+Example (tunneling friendly):
+
+<pre><code>
+    java -Djava.rmi.server.hostname=localhost -javaagent:jmx-firewall-friendly-agent-1.0-SNAPSHOT.jar ... (other stuff)
+</code></pre>	
+
+You should use this URL then (after tunneling port 62277):
+
+<pre><code>
+    service:jmx:rmi://localhost:62277/jndi/rmi://localhost:62277/jmxrmi
+</code></pre>	
