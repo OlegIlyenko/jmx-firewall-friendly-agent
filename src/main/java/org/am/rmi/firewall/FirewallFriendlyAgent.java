@@ -16,8 +16,6 @@ import java.util.HashMap;
  * port "example.rmi.agent.port".
  * <p/>
  * <p>Idea take from: http://blogs.sun.com/jmxetc/entry/connecting_through_firewall_using_jmx
- *
- * @author Oleg Ilyenko
  */
 public class FirewallFriendlyAgent {
 
