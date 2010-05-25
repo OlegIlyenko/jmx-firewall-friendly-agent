@@ -1,6 +1,6 @@
 Idea taken from:
 
-    http://blogs.sun.com/jmxetc/entry/connecting_through_firewall_using_jmx
+    "Connecting Through Firewall Using JMX - Without modifying the server application":http://blogs.sun.com/jmxetc/entry/connecting_through_firewall_using_jmx
 
 to use agent execute:
 
