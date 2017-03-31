@@ -65,8 +65,13 @@ public class FirewallFriendlyAgent {
 		// The port for the RMI registry is specified in the second part
 		// of the URL, in "rmi://"+hostname+":"+port
 
-		final String hostname = InetAddress.getLocalHost().getHostName();
-
+		String userProvidedHostname = System.getProperty("java.rmi.server.hostname");
+		String hostname = null;
+		if (userProvidedHostname == null || "".equals(userProvidedHostname)){
+			hostname = InetAddress.getLocalHost().getHostName();
+		} else {
+			hostname = userProvidedHostname;
+		}
 		System.out.println(PREFIX + "Create an RMI connector server. Url for access: " + getServiceUrl(port, hostname));
 		JMXServiceURL url = new JMXServiceURL(getServiceUrl(port, hostname));
 
